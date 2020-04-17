@@ -35,7 +35,7 @@ class Student < ActiveRecord::Base
     # num = enroll_course_id.to_i
     #binding.pry
     #Record.create(course_id:c3.id, student_id: s2.id, course_name: c3.name, grade:"A", semester:"Spring2018")
-    Record.create(course_id: enroll_course_id.to_i, student_id: self.id, course_name: courses.name, grade: "Waiting", semester: "Spring2020")
+    Record.create(course_id: enroll_course_id.to_i, student_id: self.id, course_name: Course.find(enroll_course_id.to_i).name, grade: "Waiting", semester: "Spring2020")
     puts "This is updated list for enrolled course"
     self.view_enrolled # see after adding the course
   end
