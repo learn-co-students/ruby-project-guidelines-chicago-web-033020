@@ -2,12 +2,12 @@ class Student < ActiveRecord::Base
   has_many :records
   has_many :courses, through: :records
 
-  def show_student_in2fo  #READ
+  def show_student_info  #READ
     puts "Student account info includes name and city:"
     puts "Student ID: #{self.id}   Name: #{self.name}   City: #{self.city}"
   end
 
-  def view_enrolled
+  def view_enrolled #READ
     puts "\nCourses enrolled is (are):"
      enrolled_list = Record.all
      enrolled_list.each do |record| 
@@ -26,15 +26,6 @@ class Student < ActiveRecord::Base
   #   end
   #   self.view_enrolled
   # end
-   
-  def self.list_all_courses #READ
-    puts "\nAvailable courses are: "
-    course_list = Course.all
-    course_list.each do |course|
-    puts "#{course.id}. #{course.name}"
-    end
-  end
-
 
 
   def enroll  #CREATE
@@ -49,7 +40,7 @@ class Student < ActiveRecord::Base
     self.view_enrolled # see after adding the course
   end
 
-  def update_city #Update   =w=b
+  def update_city #Update   
     puts "You can update your city info"
     self.show_student_info  # Show student info first
     puts "Input your new city info"
@@ -73,10 +64,6 @@ class Student < ActiveRecord::Base
     # Person.where(age: 0..18).destroy_all
     # call viewEnrolled to see enrolled results
   end
-
-  # def exit_app  #exit
-  #   exit
-  # end
 end
 
 
