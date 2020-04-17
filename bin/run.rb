@@ -1,6 +1,5 @@
 require_relative '../config/environment'
 # require "tty-prompt"
-
 # prompt = TTY::Prompt.new
 puts "This APP records students' course history"
 puts "-----------------------------------------\n"
@@ -14,7 +13,7 @@ def account_existence
     puts "Hello, #{user.name}.\n"
   else
     puts "We don't have your info,"
-    puts "please input your city to register a new account."
+    puts "please input your city to create a new account."
     city = gets.chomp
     user = Student.create(name: student_name, city: city)
     puts "Hello, #{user.name}.\n"
@@ -39,7 +38,7 @@ def selection
 end
 selection
 
-loop do
+loop do   #Keep in menu
   input = gets.chomp
   case input.to_i
   when 1
