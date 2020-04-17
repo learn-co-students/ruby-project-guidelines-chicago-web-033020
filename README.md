@@ -1,3 +1,38 @@
+# CLI CRUD APP 
+This simple CLI APP allow students to manage their enrollments and view course info. 
+* bundle install
+Contributors: Yann, Duke, Jess
+CRUD feature:
+Read => Students will be able to read info such as available and look at what courses are already enrolled.
+Create => New students can creat new account, they can enrolled into a new course.
+Update => Students can update their personal info.
+Delete => New students can drop a course.
+
+Models:
+Student => Stores student info such as name and city.
+Course => Stores course info.
+Record => Stores enrollments of students.
+
+Student ---<Records>--- Course
+
+License:
+This is licensed under #Learn.co Educational Content License
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###Original Content###
 # Module One Final Project Guidelines
 
 Congratulations, you're at the end of module one! You've worked crazy hard to get here and have learned a ton.
