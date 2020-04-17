@@ -7,25 +7,23 @@ class Student < ActiveRecord::Base
     puts "Student ID: #{self.id}   Name: #{self.name}   City: #{self.city}"
   end
 
-  def view_enrolled #READ
-    puts "\nCourses enrolled is (are):"
-     enrolled_list = Record.all
-     enrolled_list.each do |record| 
-      if record.student_id == self.id
-        puts "Course ID: #{record.course_id}   Course Name: #{record.course_name}"
-         # to list courses that the specfic user is enrolled
-      end 
-     end
-  end
+#   def view_enrolled #READ
+#     puts "\nCourses enrolled is (are):"
+#      enrolled_list = Record.all
+#      enrolled_list.each do |record| 
+#       if record.student_id == self.id
+#         puts "Course ID: #{record.course_id}   Course Name: #{record.course_name}"
+#          # to list courses that the specfic user is enrolled
+#       end 
+#      end
+#   end
 
-  # def view_enrolled
-  #   self.view_enrolled
-  #   puts "\nCourses enrolled is (are):"
-  #   self.records.each do |record|
-  #   puts "Course ID: #{record.course.id} Course Name: #{record.course.name}" 
-  #   end
-  #   self.view_enrolled
-  # end
+  def view_enrolled
+    puts "\nCourses enrolled is (are):"
+    self.records.each do |record|
+    puts "Course ID: #{record.course.id} Course Name: #{record.course.name}" 
+    end
+  end
 
 
   def enroll  #CREATE
